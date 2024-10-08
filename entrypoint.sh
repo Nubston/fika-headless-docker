@@ -62,7 +62,7 @@ run_client() {
         echo "Xvfb process not found. Restarting Xvfb."
         run_xvfb
     fi
-    WINEDEBUG=-all $XVFB_RUN $WINE $EFT_BINARY $BATCHMODE $NOGRAPHICS $NODYNAMICAI -token="$PROFILE_ID" -config="{'BackendUrl':'http://$SERVER_URL:$SERVER_PORT', 'Version':'live'}"
+    WINEDEBUG=-all $XVFB_RUN $WINE $EFT_BINARY $BATCHMODE $NOGRAPHICS $NODYNAMICAI -UpdateRate=120 -token="$PROFILE_ID" -config="{'BackendUrl':'http://$SERVER_URL:$SERVER_PORT', 'Version':'live'}"
 }
 
 if [ "$USE_MODSYNC" == "true" ]; then
